@@ -64,6 +64,7 @@ Package: one or more related modules packaged together.
 
 */
 
+
 // npm install snake-names
 
 const snakeNames = require('snake-names');
@@ -77,4 +78,25 @@ console.log(snakeNames.cute);
 // EXAMPLE - look up (NODE-snake-project)file on github.
 
 
+
+let http = require('http')
+let server = http.createServer(function (req, res) {
+    res.write('Hello FSD!')
+    res.end()
+});
+
+server.listen(3000, function () { // localhost 3000
+    console.log('I am awake!')
+});
+
+// parameters: ^ req = request, ^res = response
+
+/* Global npm installs: 
+- npm install -g nodemon
+^ monitors code for changes and automatically restarts your server as needed.
+
+**** ctrl. C - stops the server process
+
+//************  ^ EXAMPLE - look up file on github - (NODE-my-server)*******************
+// ***** also look on index.js for EXAMPLE **********
 
