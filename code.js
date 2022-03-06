@@ -121,11 +121,76 @@ Core Modules: already installed.
     fs: methods for dealing with file I/O
 
 
-// JSX: Javascript XML
+JSX: Javascript XML
     - allows you to write a mishmash of javascript and HTML.
     - new syntax makes it easier to build dynamic webpages based on data.
 
 Unavailable syntax - for loops, and if statements are REPLACED with:
                     .map() method, and ternary operators.
+
+
+
+Web frameworks:
+    Server-side web frameworks are software 
+    frameworks that make it easier to write, maintain, 
+    and scale web applications. They provide tools and 
+    libraries that simplify common web development 
+    tasks.
+
+Popular webframeworks:
+    - Express = Node.js
+    - Flask = Python
+    - Django = Python
+    - Spring boot = Java
+    - Laravel = PHP
+
+Monolithic          vs.               Modular
+- many built in features.            - highly customizable.
+- preset/expected configurations.    - choice configurations.
+
+* Node.Express is a modular framework
+
+npm install express
+
+****************************************************************
+****************************************************************
+NODE.EXPRESS CHECKLIST:
+    - make directory
+    - create index.js file
+    - npm init -y
+    - npm install express
+    - open index.js
+    - require express
+    - initialize the app variable
+        - call app.get()
+        - set '/' as the path (1st argument)
+        - write callback function with req, res
+        - call res.send('hello world')
+    - call app.listen(port#) to keep server open
+
+
+Routing: finding your way around
+
+GET             vs.             POST
+
+Introducting Controllers: 
+
+.Router()
+
+Postman:
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
 
 
