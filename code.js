@@ -152,8 +152,8 @@ Monolithic          vs.               Modular
 
 npm install express
 
-****************************************************************
-****************************************************************
+*********************************************************************
+*********************************************************************
 NODE.EXPRESS CHECKLIST:
     - make directory
     - create index.js file
@@ -167,17 +167,68 @@ NODE.EXPRESS CHECKLIST:
         - write callback function with req, res
         - call res.send('hello world')
     - call app.listen(port#) to keep server open
-
+***********************************************************************
+***********************************************************************
 
 Routing: finding your way around
 
-GET             vs.             POST
+Environment variables:
+    - Avoid hard-coded data in code.
+    - Protect privatae data like API keys.
+    - Abstract machine-specific settings (like your choice of port).
 
-Introducting Controllers: 
+How to use .env variables:
+    - Install the node module dotenv.
+    - Require it cand call the config() method.
+    - Access the .env variable using the global variable process.
 
-.Router()
+******** look at github file - NODE-rainbow-routes for .env practice ********
 
-Postman:
+How does a client generate a GET request?
+- Typing into the browsers address bar.
+- Clicking a hyperlink
+- Submitting a form that uses the GET method
+
+How does a server interpret the data the client sends on a GET request?
+- The method(http verb)
+- The path(url part)
+- The data(query)
+
+GET               vs.                 POST
+- visible data                          - data not visible
+- not encrypted                         - encrypted
+- good for public info.(google searches)- good for private info.(passwords)
+
+Path for both GET and POST requests:    /auth/login
+
+Introducting Controllers: You can organize related routes into controllers. Controllers allow you to put routes in another file besides index.js and help keep them organized by their purpose.
+
+To make a controller, call,
+                                express.Router()
+& attach routes.
+
+
+Postman: tool for scaling
+
+*** Check out slack github links from Eric ***
+^ go over review
+
+
+MODEL VIEW CONTROLLER:
+
+Programmatic webpage:
+
+SSR: 
+
+Bread/CRUD:
+
+query parameters         vs.        query strings
+- after the / in the path            - starts with ? in the path
+- no variables in code               - has variables in code
+
+* always add the error routes (404...) as the last route after all other routes on the page.
+
+Go over JSX
 
 
 
