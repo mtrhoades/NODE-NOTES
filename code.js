@@ -216,11 +216,57 @@ Postman: tool for scaling
 
 MODEL VIEW CONTROLLER:
 
+Client (request)------> Controller (request)-------> Model (collects data from data base) (response)------> Controller (response)-------> View (response)------> Client
+
+
 Programmatic webpage:
 
 SSR: 
 
 Bread/CRUD:
+
+- Mkdir
+- touch files
+- npm init -y   
+- npm i express dotenv
+- code .
+
+- in vs.code:
+    - in a .env file write:
+        * PORT=3003
+    * const express = require('express')
+    - configuration: 
+        * require('dotenv').config()
+        * const PORT = process.env.PORT
+        * const app = express()
+    * const app = express()
+    - Routes:
+        * app.get('/', (req, res) => {
+            res.send('Welcome to an Awesome App about Breads')
+            })
+    - Listen for server:
+        * app.listen(PORT, () => {
+            console.log('nomming at port', PORT);
+            })
+    - Create controller folder in terminal:
+            * mkdir controllers
+            * touch controllers/breads
+    - Inside breads file in controllers folder:
+            * const express = require('express')
+            * const breads = express.Router()
+    - Index for breads: breads.get() (shows list of breads)
+    - export breads: module.exports = breads
+    - Inside server.js: Routes, create breads controller variable
+    - Create models folder and touch bread.js
+    - put in data as array of objects inside bread.js and export using: module.exports = data
+    - require it in controllers_breads.js file
+    - SHOW in controllers_breads.js file with breads.get(/:arrayIndex)
+            ^ grabbing what the user is passing to us. It makes it able to see each individual bread using the index of the array of objects from the breads list of data in models_bread.js to use in the url. example: localhost:3003/breads/0
+    - Install middleware on server.js file
+    - add directory views, views/layouts and touch views/index.jsx, views/layouts/defaults.jsx
+    - 
+
+
 
 query parameters         vs.        query strings
 - after the / in the path            - starts with ? in the path
@@ -230,7 +276,9 @@ query parameters         vs.        query strings
 
 Go over JSX
 
+Rest API:
 
+REST: representational, state, transfer
 
 
 
