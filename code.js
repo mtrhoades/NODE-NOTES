@@ -343,6 +343,8 @@ Mongodb-compass:
     - db.collection name.deleteOne({object data})    - deletes part of the data in document
     - $gt                                            - greater than
     - $lt                                            - less than
+    - $gte                                           - greater than or equal to
+    - $lte                                           - less than or equal to
 
 * To open mongoDB in terminal:
             - mongodb-compass & disown
