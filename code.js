@@ -126,9 +126,7 @@ JSX: Javascript XML
     - new syntax makes it easier to build dynamic webpages based on data.
 
 Unavailable syntax - for loops, and if statements are REPLACED with:
-                    .map() method, and ternary operators.
-
-
+                    .map() method, and ternary operators respectively.
 
 Web frameworks:
     Server-side web frameworks are software 
@@ -154,6 +152,7 @@ npm install express
 
 *********************************************************************
 *********************************************************************
+
 NODE.EXPRESS CHECKLIST:
     - make directory
     - create index.js file
@@ -167,6 +166,7 @@ NODE.EXPRESS CHECKLIST:
         - write callback function with req, res
         - call res.send('hello world')
     - call app.listen(port#) to keep server open
+
 ***********************************************************************
 ***********************************************************************
 
@@ -204,24 +204,43 @@ Path for both GET and POST requests:    /auth/login
 Introducting Controllers: You can organize related routes into controllers. Controllers allow you to put routes in another file besides index.js and help keep them organized by their purpose.
 
 To make a controller, call,
-                                express.Router()
+    - express.Router()
 & attach routes.
 
-
 Postman: tool for scaling
-
-*** Check out slack github links from Eric ***
-^ go over review
 
 
 MODEL VIEW CONTROLLER:
 
+**************************************************************************************************
+
 Client (request)------> Controller (request)-------> Model (collects data from data base) (response)------> Controller (response)-------> View (response)------> Client
 
+***************************************************************************************************
+
+MVC is:
+•A software architecture that is commonly used for web applications.
+•Creates an easily understandable and maintainable pattern.
+•Separates concerns, allowing for better sustainability.
+
+Models: Data and Data Logic
+    •E.g., user information
+    •Validating user information (valid birthday, etc.)
+    •Part of the back-end
+
+Views:  User Interaction/User Experience
+    •E.g., how a user would see their information on a webpage
+    •Providing an error message for the user to update some data
+    •Part of the front-end
+
+Controllers:
+    •Manages the interaction between models and views
+    •Provides an error message for the user to update data
+    •Is this the front-end or back-end? - facilitates the back-end to the front-end and vice versa.
 
 Programmatic webpage:
-
-SSR: 
+    SSR: Server Side Rendering
+        - a method of loading your website's javascript on your own server.
 
 Bread/CRUD:
 
@@ -264,7 +283,6 @@ Bread/CRUD:
             ^ grabbing what the user is passing to us. It makes it able to see each individual bread using the index of the array of objects from the breads list of data in models_bread.js to use in the url. example: localhost:3003/breads/0
     - Install middleware on server.js file
     - add directory views, views/layouts and touch views/index.jsx, views/layouts/defaults.jsx
-    - 
 
 
 
@@ -272,18 +290,69 @@ query parameters         vs.        query strings
 - after the / in the path            - starts with ? in the path
 - no variables in code               - has variables in code
 
+
 * always add the error routes (404...) as the last route after all other routes on the page.
 
-Go over JSX
+Go over JSX - html and javascript combined. (uses REACT framework)
 
-Rest API:
+Rest API: A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer and was created by computer scientist Roy Fielding.
 
 REST: representational, state, transfer
+
+REST in practice:
+    Action:     HTTP METHOD:        Example Route:
+    INDEX       GET                 /breads
+    SHOW        GET                 /breads/:id
+    CREATE      POST                /breads
+    NEW         GET                 /breads/new
+    EDIT        GET                 /breads/:id/edit
+    UPDATE      PUT                 /breads/id
+    DESTROY     DELETE              /breads/:id
+
+
+MongoDB:
+- keeps updated changes for next server load
+
+MongoDB-Compass:
+    Compass is a MongoDB GUI that allows you to visually explore and interact with your Mongo databases.
+
+What is a connection string?
+    A string that identifies where to connect to a specific databaseThis is similar to how a home address tells you where your friend lives. A connection string tells you where your data lives.
+
+SQL: structured query language
+
+vs. noSQL: stores data in a flexible JSON-like document structure.
+
+* SQL databases are relational, while NoSQLs are non-relational.
+
+BSON: Binary JSON
+
+Mongo can store many databases
+
+A database is made up of many collections that are made up of sets of documents which is the basic unit of data.
+
+locally vs. the cloud installations
+
+Mongodb-compass:
+    - show dbs                                       - shows databases
+    - use "database name"                            - creates/uses previously created database
+    - db.createCollection('collection name')         - creates collection inside database
+    - db.collection name.insertOne({object data})    - creates a document
+    - db.collection name.find()                      - shows the collection or specified part of documents
+    - db.collection name.updatedOne({object data})   - updates the document using $set:
+    - db.collection name.deleteOne({object data})    - deletes part of the data in document
+    - $gt                                            - greater than
+    - $lt                                            - less than
+
+* To open mongoDB in terminal:
+            - mongodb-compass & disown
+    * ^ "& disown" opens the application and keeps it seperate from terminal so you can keep using the terminal without the program crashing.
 
 
 
 
 */
+
 
 
 
