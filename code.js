@@ -351,6 +351,48 @@ Mongodb-compass:
     * ^ "& disown" opens the application and keeps it seperate from terminal so you can keep using the terminal without the program crashing.
 
 
+* JASKIS activity on github - API-JASKIS
+
+
+ODM: Object Data Mapper
+    - allows for performing CRUD operations and queries within appoication code rather than in the mongo shell.
+    - helps model data, providing structure and consistency to documents.
+    - makes document validation easier with built-in methods.
+
+Mongoose: an ODM for mongoDB
+    * works between the database and node.express
+            - simplifies interacting with a mongo database within node apps.
+            - essentially translates mongo doucments into javascript objects and vice versa.
+
+* Mongoose Cycle:
+    client application (JSX) ----> node.express (server) ----> mongoose -----> mongoDB -----> mongoose -----> node.express ----> client application
+
+* Mongoose models allow us to 
+interact with a Mongo database.Models are objects that provide access to a 
+corresponding collection in Mongo.
+    
+    * classes in javascript is creating new objects
+
+* Schemas are like a blueprint. They 
+determine the structure of documents 
+within a collection.
+    
+* Where documents are the basic unit 
+of data in Mongo, schemas are the 
+basic building block in Mongoose.
+
+* After defining a schema, we need to 
+convert it into a model to interact 
+with a Mongo database.
+
+Models are Objects:
+    * Creating a new Mongoose model 
+generates an object.The object contains helper methods for 
+performing typical database actions.
+
+
+
+
 
 
 */
