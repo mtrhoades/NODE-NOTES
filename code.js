@@ -391,6 +391,45 @@ generates an object.The object contains helper methods for
 performing typical database actions.
 
 
+Helper Methods:
+
+options object helper method:
+Destination.find({}, [], { sort: { tickets_available: 1 } })
+            ^using an options objet to sort the returned data in ascending numerical order of tickets_available.
+Destination.findByIdAndUpdate(req.params.id, { tickets_available: 0 }, { new: true })
+            ^using the options object to ensure it returns the updated document.
+
+Schema validation:
+            - the validators are the properties of the object.
+            - built-in validators
+            - "unique" validator property - accepts boolean values, false is the default.
+
+Custom helper methods:
+instance: can only be used on instances of a model (a document).
+          can only be used after a document has been retrieved from the database.
+static:   can only be utilized on a model (a collection).
+          can be used before documents have been retrieved from the database.
+
+          Equivalent Terms:
+Mongoose        vs.         MongoDB 
+Instance    same as...      Document
+Model       same as...      Collection
+
+Defining instance methods:
+userSchema.methods.fullName = function () {
+
+}
+    ^ userSchema: Schema on which to define the insance method.
+    ^ methods: tell mongoose you want to define an instance method.
+    ^ fullName: what you want to name the method.
+
+Defining static methods:
+userSchema.static.getHighScorers = function () {
+
+}
+    ^ userSchema: Schema on which to define the static method.
+    ^ static: tell mongoose you want to define a static method.
+    ^ getHighScorers: what you want to name the method.
 
 
 
