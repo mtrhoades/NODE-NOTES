@@ -117,7 +117,7 @@ server.listen(3000, function () { // localhost 3000
 Core Modules: already installed.
     http: creating web servers
     url: methods for url parsing
-    path: methos for parsing file paths
+    path: methods for parsing file paths
     fs: methods for dealing with file I/O
 
 
@@ -179,6 +179,7 @@ Environment variables:
 
 How to use .env variables:
     - Install the node module dotenv.
+        - npm i dotenv
     - Require it cand call the config() method.
     - Access the .env variable using the global variable process.
 
@@ -201,7 +202,7 @@ GET               vs.                 POST
 
 Path for both GET and POST requests:    /auth/login
 
-Introducting Controllers: You can organize related routes into controllers. Controllers allow you to put routes in another file besides index.js and help keep them organized by their purpose.
+Introducing Controllers: You can organize related routes into controllers. Controllers allow you to put routes in another file besides index.js and help keep them organized by their purpose.
 
 To make a controller, call,
     - express.Router()
@@ -430,6 +431,77 @@ userSchema.static.getHighScorers = function () {
     ^ userSchema: Schema on which to define the static method.
     ^ static: tell mongoose you want to define a static method.
     ^ getHighScorers: what you want to name the method.
+
+
+Multiple models:
+    To add a second model, simply 
+    create another schema for it.This will create a second collection in 
+    Mongo.
+
+When relating models together, there 
+are two common patterns:
+    •One-to-many relationship
+        A document from one collection can exclusively have many documents from another collection.For example, a music album can have many songs, but each song can only belong to one album.
+    •Many-to-many relationship
+        A document from one collection can exclusively have many documents from another collection.For example, a music album can have many songs, but each song can only belong to one album.
+
+We can relate two models together by utilizing object IDs.One model would have a schema field to hold the ID of the other related model. 
+How do we decide which model has this field?
+    - Parent reference:
+        The child model has the related ID field to reference its parent.
+            For example, a song model would have an album field.
+    - Child reference:
+        The parent model has a related ID field array to reference all of its children.
+             For example, an album model would have a songs array field.
+
+Schema.Types.ObjectID: tells Mongoose the datatype for the field should be an ID. ref: tells Mongoose what 
+model the ID will belong to.
+
+.populate() pulls in data from a referenced document.
+    - It virtually replaces the reference ID field with the related data.
+    - The method should be used on the model that holds the reference ID field.
+
+.populate: The populate method can be used after any .find query method.
+    .populate can be chained onto a single query as many times as needed.
+
+Mongoose virtuals:
+    -Virtuals are a way to create a virtual field on Mongoose documents. A virtual field is non-persistent and not saved to the database.
+
+Virtual use cases:
+    Computing values
+        - calculating a value based on an existing field
+    Combining values
+        - combining existing fields
+    Finding related docs
+        - populating the parent with its related children documents
+
+Basic virtual syntax:
+    •userSchema: The schema on which to create a virtual field
+    •.virtual: The virtual method
+    •'fullName': The first argument and what you want to name the virtual field
+    •.get(function()): This getter method allows you to get and transform a document's data.
+    •return [...]: Return the value to set the virtual field to equal
+
+* By default, virtual fields do not appear in JSON results.
+To include them, we must set an option called toJSON on the schema.
+
+Virtuals and Populate Syntax
+    invoking .populate() on the model:
+        - The syntax for using populate is the same.
+        - The argument that should be passed is the name of the virtual field.
+
+Virtuals:
+    Use when adding a temporary attribute to a document.
+    Particularly useful for values you will constantly reference.
+
+vs.
+
+Helper Methods:
+    Use when writing a custom utility method on a document.
+    Helpful for things used often but not constantly.
+
+
+
 
 
 
